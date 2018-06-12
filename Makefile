@@ -7,7 +7,7 @@
 
 NAME = 		FASTAtools
 
-CC =		gcc
+CC =		gcc -g
 
 SRC =		src/main.c				\
 		src/fastatools/fasta.c			\

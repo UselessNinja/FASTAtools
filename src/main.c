@@ -21,7 +21,7 @@ void help(void)
 	printf("\toption 4: read FASTA from standard input, write the k-mer ");
 	printf("list to the standard output\n");
 	printf("\toption 5: read FASTA from standard input, write the coding");
-	printf(" sequences lsit to the standard output\n");
+	printf(" sequences list to the standard output\n");
 	printf("\toption 6: read FASTA from the standard input, write the ");
 	printf("amino acids list to the standard output\n");
 	printf("\toption 7: read FASTA from standard input containing ");

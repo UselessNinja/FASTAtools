@@ -56,6 +56,7 @@ char *format_string(char *str)
 			j++;
 		}
 	}
+	formated[j] = '\0';
 	return (formated);
 }
 

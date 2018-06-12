@@ -15,11 +15,8 @@ int get_kmers(int k, int l, char *str, char **kmer)
 
 	for (i = 0; str[i] != 0; i++) {
 		kmer[l] = malloc(sizeof(char) * (k + 1));
-		for (j = i, m = 0; j < i + k; j++, m++) {
-			if (str[j + k] == '\0')
-				break;
+		for (j = i, m = 0; j < i + k; j++, m++)
 			kmer[l][m] = str[j];
-		}
 		kmer[l][m] = '\0';
 		if (duplica_buster(kmer, l) != 0 && strlen(kmer[l]) ==
 			(size_t)k && is_the_string_legal(kmer[l]) == 0) {
@@ -47,15 +44,16 @@ void k_mers(int k)
 
 	clean_data(data);
 	for (i = 1; data[i] != NULL; i++) {
-		if (data[i][0] != '\0' && strchr(data[i], 62) == NULL) {
+		if (data[i] != NULL && data[i][0] != '\0' && 
+			strchr(data[i], 62) == NULL) {
 			l = get_kmers(k,l, data[i], kmer);
 		}
 	}
+	kmer[l] = NULL;
 	qsort(kmer, l, sizeof(char*), comparison);
 	for (i = 0; i < l; i++) {
 		printf("%s\n", kmer[i]);
-		free(kmer[l]);
 	}
-	free(kmer);
+	free_data(kmer);
 	free_data(data);
 }
